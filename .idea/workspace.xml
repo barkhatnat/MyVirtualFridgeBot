@@ -5,39 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61840525-b9c1-4626-82e1-29af27cb86eb" name="Changes" comment="feat: add files">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/Fridge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/FridgeProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/Recipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/RecipeBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/DateEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/FridgeProductManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/IngredientManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/RecipeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/VirtualFridgeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/dao/FridgeProductDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/dao/IngredientDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/dao/RecipeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/db/DatabaseConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/db/DatabaseCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/exceptions/AmountException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/exceptions/ExpirationDateException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/exceptions/FridgeProductNumberException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/exceptions/NotAvailableRecipeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/exceptions/RecipeNameException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/exceptions/SearchingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/service/TelegramBot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/barkhatnat/VirtualFridge/VirtualFridgeApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/RecipeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/RecipeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/VirtualFridgeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/VirtualFridgeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/service/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/service/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/barkhatnat/VirtualFridge/VirtualFridgeApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,12 +39,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Mvideo/Documents/GitHub/MyVirtualFridgeBot",
+    "last_opened_file_path": "C:/Users/Mvideo/Downloads/h2-2.2.224.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -109,7 +87,7 @@
       <updated>1701471733406</updated>
       <workItem from="1701471734465" duration="412000" />
       <workItem from="1701472178501" duration="49000" />
-      <workItem from="1701472352262" duration="136000" />
+      <workItem from="1701472352262" duration="17827000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add files">
       <option name="closed" value="true" />
@@ -119,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701471844351</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: add files">
+      <option name="closed" value="true" />
+      <created>1701472619333</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701472619333</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -51,8 +51,8 @@ public class VirtualFridgeManager {
     public Map<String, Map<String, Double>> findRecipeWithMinimalPurchases() {
         fillReadyToUseCatalog();
         return recipeBook.getRecipes().stream()
-                .filter(recipe -> recipe.getIngredientAmountCatalog().entrySet().stream()
-                        .anyMatch(entry -> readyToUseCatalog.getOrDefault(entry.getKey(), 0.0) < entry.getValue()))
+//                .filter(recipe -> recipe.getIngredientAmountCatalog().entrySet().stream()
+//                        .anyMatch(entry -> readyToUseCatalog.getOrDefault(entry.getKey(), 0.0) < entry.getValue()))
                 .collect(Collectors.toMap(
                         Recipe::getName,
                         this::calculatePurchases

@@ -20,8 +20,8 @@ public class RecipeManager {
         this.recipeBook = new RecipeBook();
     }
 
-    public Recipe addRecipeTitle(String name, int numberOfServings) throws RecipeNameException {
-        Recipe recipe = new Recipe(name, numberOfServings);
+    public Recipe addRecipeTitle(String name) throws RecipeNameException {
+        Recipe recipe = new Recipe(name, 1);
         if (recipeBook.getRecipes().contains(recipe)) {
             throw new RecipeNameException("Recipe with this name already exists");
         }
@@ -60,5 +60,9 @@ public class RecipeManager {
 
     public RecipeBook getRecipeBook() {
         return recipeBook;
+    }
+
+    public RecipeDao getRecipeDao() {
+        return recipeDao;
     }
 }
