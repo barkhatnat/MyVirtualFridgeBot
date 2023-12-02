@@ -12,7 +12,7 @@ public class IngredientDao {
     public void addIngredient(Ingredient ingredient) throws SQLException {
         String query = "INSERT INTO ingredient (name) VALUES (?)";
         PreparedStatement preparedStatement = DatabaseConnectionManager.connection.prepareStatement(query);
-        preparedStatement.setString(1, ingredient.getName());
+        preparedStatement.setString(1, ingredient.name());
         preparedStatement.executeUpdate();
     }
 
@@ -41,7 +41,7 @@ public class IngredientDao {
     public int findIdByIngredient(Ingredient ingredient) throws SQLException, SearchingException {
         String query = "SELECT * FROM ingredient WHERE name = ?";
         PreparedStatement preparedStatement = DatabaseConnectionManager.connection.prepareStatement(query);
-        preparedStatement.setString(1, ingredient.getName());
+        preparedStatement.setString(1, ingredient.name());
         ResultSet result = preparedStatement.executeQuery();
         if (result.next()) {
             return result.getInt("id");

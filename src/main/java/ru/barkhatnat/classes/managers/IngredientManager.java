@@ -16,7 +16,7 @@ public class IngredientManager {
     public static Ingredient nameToIngredient(String name) throws SQLException {
         Ingredient ingredient = null;
         for (Ingredient ingr : ingredients) {
-            if (name.equals(ingr.getName())) {
+            if (name.equals(ingr.name())) {
                 ingredient = ingr;
                 break;
             }

@@ -26,7 +26,7 @@ public class FridgeProductDao {
     public int findIdByFridgeProduct(FridgeProduct fridgeProduct) throws SQLException, SearchingException {
         String query = "SELECT * FROM fridge_product WHERE ingredient_id = ?";
         PreparedStatement preparedStatement = DatabaseConnectionManager.connection.prepareStatement(query);
-        preparedStatement.setString(1, fridgeProduct.getIngredient().getName());
+        preparedStatement.setString(1, fridgeProduct.getIngredient().name());
         ResultSet result = preparedStatement.executeQuery();
         if (result.next()) {
             return result.getInt("id");

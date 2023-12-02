@@ -112,7 +112,9 @@ public class RecipeDao {
             recipe.addNewIngredientAndAmount(ingredientDao.findIngredientById(result.getInt("ingredient_id")), result.getDouble("amount"));
         }
         while (result.next()) {
-            recipe.addNewIngredientAndAmount(ingredientDao.findIngredientById(result.getInt("ingredient_id")), result.getDouble("amount"));
+            if (recipe != null) {
+                recipe.addNewIngredientAndAmount(ingredientDao.findIngredientById(result.getInt("ingredient_id")), result.getDouble("amount"));
+            }
         }
         return recipe;
     }

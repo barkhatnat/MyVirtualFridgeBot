@@ -3,7 +3,7 @@ package ru.barkhatnat.classes;
 import java.util.HashSet;
 
 public class RecipeBook {
-    private HashSet<Recipe> recipes = new HashSet<>();
+    private final HashSet<Recipe> recipes = new HashSet<>();
 
     public void addRecipe(Recipe recipe) {
         recipes.add(recipe);

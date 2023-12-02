@@ -29,12 +29,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     public TelegramBot(String token) {
         super(token);
-        try {
-            DatabaseConnectionManager.openConnection();
-            DatabaseCreator.create();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
         virtualFridgeManager = new VirtualFridgeManager();
         List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start", "получить приветственное сообщение"));
@@ -47,9 +41,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         listOfCommands.add(new BotCommand("/available", "посмотреть список доступных к использованию рецептов"));
         listOfCommands.add(new BotCommand("/chooserecipe", "выбрать рецепт для приготовления"));
         listOfCommands.add(new BotCommand("/minimalpurchases", "посмотреть рецепты, для которых нужны минимальные дозакупки"));
-
-
-//        listOfCommands.add(new BotCommand("/settings", "set your preferences"));
         try {
             this.execute(new SetMyCommands(listOfCommands, new BotCommandScopeDefault(), null));
         } catch (TelegramApiException e) {
@@ -178,7 +169,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             output.append("Рецепт: ").append(recipe.getName()).append("\n")
                     .append("Состав:").append("\n");
             for (Ingredient ingredient : recipe.getIngredientAmountCatalog().keySet()) {
-                output.append("Название: ").append(ingredient.getName())
+                output.append("Название: ").append(ingredient.name())
                         .append(", Количество: ").append(recipe.getIngredientAmountCatalog().get(ingredient)).append("\n");
             }
         }
@@ -315,7 +306,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         try {
             ResultSet result = DatabaseConnectionManager.executeQuery("select * from fridge_product");
             while (result.next()) {
-                output.append("Название: ").append(IngredientManager.ingredientDao.findIngredientById(result.getInt("ingredient_id")).getName())
+                output.append("Название: ").append(IngredientManager.ingredientDao.findIngredientById(result.getInt("ingredient_id")).name())
                         .append("\n").append("Количество: ").append(result.getDouble("amount"))
                         .append("\n").append("Годен до: ").append(DateEditor.timestampToString(result.getTimestamp("expiration_date")))
                         .append("\n\n");

@@ -17,7 +17,7 @@ public class VirtualFridgeManager {
     private final RecipeManager recipeManager;
     RecipeBook recipeBook;
     Fridge fridge;
-    HashMap<Ingredient, Double> readyToUseCatalog = new HashMap<>();
+    private final HashMap<Ingredient, Double> readyToUseCatalog = new HashMap<>();
 
     public VirtualFridgeManager() {
         fridgeProductManager = new FridgeProductManager();
@@ -42,7 +42,7 @@ public class VirtualFridgeManager {
             double amountNeeded = entry.getValue() - readyToUseCatalog.getOrDefault(ingredient, 0.0);
             if (amountNeeded > 0) {
                 totalPurchases += amountNeeded;
-                result.put(ingredient.getName(), totalPurchases);
+                result.put(ingredient.name(), totalPurchases);
             }
         }
         return result;
@@ -76,22 +76,22 @@ public class VirtualFridgeManager {
             Ingredient ingredient = entry.getKey();
             Double amountNeeded = entry.getValue();
             try {
-                List<FridgeProduct> fridgeProducts = fridgeProductManager.findFridgeProductByName(ingredient.getName());
+                List<FridgeProduct> fridgeProducts = fridgeProductManager.findFridgeProductByName(ingredient.name());
                 fridgeProducts.sort(Comparator.comparing(FridgeProduct::getExpirationDate));
                 for (FridgeProduct fridgeProduct : fridgeProducts) {
                     if (amountNeeded != 0) {
                         double amountAvailable = fridgeProduct.getAmount();
                         if (amountAvailable >= amountNeeded) {
-                            fridgeProductManager.editFridgeProductAmountWithNameAndDate(fridgeProduct.getIngredient().getName(), amountAvailable - amountNeeded, timestampToString(fridgeProduct.getExpirationDate()));
+                            fridgeProductManager.editFridgeProductAmountWithNameAndDate(fridgeProduct.getIngredient().name(), amountAvailable - amountNeeded, timestampToString(fridgeProduct.getExpirationDate()));
                             amountNeeded = 0.0;
                         } else {
                             amountNeeded -= amountAvailable;
-                            fridgeProductManager.editFridgeProductAmountWithNameAndDate(fridgeProduct.getIngredient().getName(), 0, timestampToString(fridgeProduct.getExpirationDate()));
+                            fridgeProductManager.editFridgeProductAmountWithNameAndDate(fridgeProduct.getIngredient().name(), 0, timestampToString(fridgeProduct.getExpirationDate()));
                         }
                     }
                 }
                 if (amountNeeded > 0) {
-                    throw new FridgeProductNumberException("Not enough quantity of " + ingredient.getName() + " in the fridge");
+                    throw new FridgeProductNumberException("Not enough quantity of " + ingredient.name() + " in the fridge");
                 }
             } catch (SQLException | SearchingException e) {
                 throw new RuntimeException(e);
@@ -106,10 +106,5 @@ public class VirtualFridgeManager {
 
     public RecipeManager getRecipeManager() {
         return recipeManager;
-    }
-
-
-    public HashMap<Ingredient, Double> getReadyToUseCatalog() {
-        return readyToUseCatalog;
     }
 }

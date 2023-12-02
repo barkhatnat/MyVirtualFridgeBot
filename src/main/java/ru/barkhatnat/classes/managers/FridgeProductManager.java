@@ -123,7 +123,7 @@ public class FridgeProductManager {
         }
     }
 
-    public void editFridgeProductAmountWithName(String name, double amount) throws SQLException, SearchingException, ExpirationDateException, FridgeProductNumberException {
+    public void editFridgeProductAmountWithName(String name, double amount) throws SQLException, SearchingException, FridgeProductNumberException {
         ArrayList<FridgeProduct> oldProducts = fridgeProductDao.findFridgeProductByName(name);
         if (oldProducts.size() == 1) {
             if (amount == 0.0) {
@@ -163,7 +163,7 @@ public class FridgeProductManager {
         }
     }
 
-    private void integrateEditedProductAmount(FridgeProduct product, double amount) throws SQLException, SearchingException, ExpirationDateException {
+    private void integrateEditedProductAmount(FridgeProduct product, double amount) throws SQLException, SearchingException {
         fridge.update(product, new FridgeProduct(product.getIngredient(), amount, product.getExpirationDate()));
         fridgeProductDao.updateFridgeProductAmount(product, product.getExpirationDate(), amount);
     }
@@ -190,8 +190,7 @@ public class FridgeProductManager {
     }
 
     public ArrayList<FridgeProduct> findFridgeProductByName(String name) throws SQLException, SearchingException {
-        ArrayList<FridgeProduct> products = fridgeProductDao.findFridgeProductByName(name);
-        return products;
+        return fridgeProductDao.findFridgeProductByName(name);
     }
 
     private boolean checkAmount(double amount) {

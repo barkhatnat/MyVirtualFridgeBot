@@ -1,13 +1,12 @@
 package ru.barkhatnat.classes;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Objects;
 
 public class Recipe {
     private String name;
     private int numberOfServings;
-    private HashMap<Ingredient, Double> ingredientAmountCatalog;
+    private final HashMap<Ingredient, Double> ingredientAmountCatalog;
 
     public Recipe(String name, int numberOfServings) {
         this.name = name;
