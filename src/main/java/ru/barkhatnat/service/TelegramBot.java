@@ -97,7 +97,8 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     Recipe currentRecipe = null;
-    private void findMinPurchasesCommandReceived(long chatId){
+
+    private void findMinPurchasesCommandReceived(long chatId) {
         Map<String, Map<String, Double>> availableRecipes = virtualFridgeManager.findRecipeWithMinimalPurchases();
         StringBuilder output = new StringBuilder();
         if (!availableRecipes.isEmpty()) {
@@ -109,12 +110,13 @@ public class TelegramBot extends TelegramLongPollingBot {
                             .append(", Количество: ").append(availableRecipes.get(recipe).get(ingredient)).append("\n");
                 }
             }
-        }else {
+        } else {
             output.append("Нет рецептов для приготовления которых нужны дозакупки");
         }
         sendMessage(chatId, String.valueOf(output));
     }
-    private String chooseRecipe(String name){
+
+    private String chooseRecipe(String name) {
         String output = "Рецепт приготовлен! Приятного аппетита!\nПродукты в холодильнике обновлены.";
         try {
             Recipe recipe = virtualFridgeManager.getRecipeManager().getRecipeDao().findRecipeByName(name);
@@ -127,9 +129,11 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
         return output;
     }
-    private void chooseRecipeCommandReceived(long chatId){
+
+    private void chooseRecipeCommandReceived(long chatId) {
         sendMessage(chatId, "Cделай реплай этого сообщения и укажи название рецепта, который ты хочешь приготовить.");
     }
+
     private void findAvailableRecipesCommandReceived(long chatId) {
         Set<Recipe> availableRecipes = virtualFridgeManager.findAvailableRecipes();
         String output = "Доступных к приготовлению рецептов нет.";
@@ -230,7 +234,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 "Если хочешь посмотреть, что у тебя есть, используй команду /showproducts.\n\n" +
                 "Ну а если ты захочешь удалить что-то из списка, просто вызови команду /deleteproduct. " +
                 "Также у меня есть команды для добавления (/addrecipe), просмотра (/showrecipes) и удаления рецептов (/deleterecipe). " +
-                "Для просмотра доступных к использованию рецептов используй команду /availablerecipes. " +
+                "Для просмотра доступных к использованию рецептов используй команду /available. " +
                 "И, конечно, чтобы выбрать рецепт для приготовления, используй команду /chooserecipe. \n" +
                 "Не забудь проверить рецепты, для которых нужны минимальные дозакупки, с помощью команды /minimalpurchases.");
     }
@@ -274,10 +278,10 @@ public class TelegramBot extends TelegramLongPollingBot {
         String result = "Продукт успешно добавлен";
         String[] parts = input.split(",");
         if (parts.length == 3) {
-            String productName = parts[0];
-            double volume = Double.parseDouble(parts[1].trim());
-            String date = parts[2].trim();
             try {
+                String productName = parts[0];
+                double volume = Double.parseDouble(parts[1].trim());
+                String date = parts[2].trim();
                 virtualFridgeManager.getFridgeProductManager().addProductToFridge(productName, volume, date);
             } catch (SQLException | SearchingException e) {
                 result = "Ой-ой... Произошла ошибка! Извини меня за это... Попробуй выполнить команду ещё раз";
@@ -285,8 +289,10 @@ public class TelegramBot extends TelegramLongPollingBot {
                 result = "Упс! Кажется, что-то не так со сроком годности продукта! " +
                         "Проверь соответсвие введенного срока годности шаблону дд.мм.гггг. " +
                         "Также обратите внимание на то, что срок годности не может быть раньше текущей даты.";
-            } catch (AmountException e) {
+            } catch (AmountException  e) {
                 result = "Упс! Кажется, что-то не так с количеством продукта! Количество продукта не может быть отрицательное.";
+            }catch (NumberFormatException e){
+                result = "Данные, которые ты пытаешься ввести не соответствуют шаблону!";
             }
         } else {
             result = "Упс! Данные, которые ты пытаешься ввести не соответствуют шаблону!";
