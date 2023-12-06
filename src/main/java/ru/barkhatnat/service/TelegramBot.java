@@ -65,10 +65,10 @@ public class TelegramBot extends TelegramLongPollingBot {
                 case "/chooserecipe" -> chooseRecipeCommandReceived(chatId);
                 case "/minimalpurchases" -> findMinPurchasesCommandReceived(chatId);
                 default -> {
-                    if (update.getMessage().isReply() && update.getMessage().getReplyToMessage().getText().equals("Cделай реплай этого сообщения и укажи название, количество, а также дату, когда заканчивается " +
+                    if (update.getMessage().isReply() && update.getMessage().getReplyToMessage().getText().equals("Cделай реплай этого сообщения и укажи название, количество (просто число, без меры измерения), а также дату, когда заканчивается " +
                             "срок годности продукта, который вы хотите добавить в холодильник. Укажите эти параметры через запятую. " +
                             "Учти, что для введения дробного количества игредиента в качестве разделителя нужно " +
-                            "использовать точку. Срок годности нужно указать в формате дд.мм.ггг (например, 05.04.2024).")) {
+                            "использовать точку. Срок годности нужно указать в формате дд.мм.ггг (например, 05.04.2024).\nПример ввода: Молоко, 1, 15.12.2023")) {
                         sendMessage(chatId, addProduct(update.getMessage().getText()));
                     } else if (update.getMessage().isReply() && update.getMessage().getReplyToMessage().getText().equals("Cделай реплай этого сообщения и укажи название продукта, который ты хочешь удалить.")) {
                         sendMessage(chatId, deleteProductFirstTry(update.getMessage().getText()));
@@ -106,8 +106,8 @@ public class TelegramBot extends TelegramLongPollingBot {
                 output.append("Рецепт: ").append(recipe).append("\n")
                         .append("Необходимые дозакупки:").append("\n");
                 for (String ingredient : availableRecipes.get(recipe).keySet()) {
-                    output.append("Название: ").append(ingredient)
-                            .append(", Количество: ").append(availableRecipes.get(recipe).get(ingredient)).append("\n");
+                    output.append(ingredient)
+                            .append(" ").append(availableRecipes.get(recipe).get(ingredient)).append("\n");
                 }
             }
         } else {
@@ -173,9 +173,10 @@ public class TelegramBot extends TelegramLongPollingBot {
             output.append("Рецепт: ").append(recipe.getName()).append("\n")
                     .append("Состав:").append("\n");
             for (Ingredient ingredient : recipe.getIngredientAmountCatalog().keySet()) {
-                output.append("Название: ").append(ingredient.name())
-                        .append(", Количество: ").append(recipe.getIngredientAmountCatalog().get(ingredient)).append("\n");
+                output.append(ingredient.name())
+                        .append(" ").append(recipe.getIngredientAmountCatalog().get(ingredient)).append("\n");
             }
+            output.append('\n');
         }
         return String.valueOf(output);
     }
@@ -301,10 +302,10 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     private void addProductCommandReceived(long chatId) {
-        sendMessage(chatId, "Cделай реплай этого сообщения и укажи название, количество, а также дату, когда заканчивается " +
+        sendMessage(chatId, "Cделай реплай этого сообщения и укажи название, количество (просто число, без меры измерения), а также дату, когда заканчивается " +
                 "срок годности продукта, который вы хотите добавить в холодильник. Укажите эти параметры через запятую. " +
                 "Учти, что для введения дробного количества игредиента в качестве разделителя нужно " +
-                "использовать точку. Срок годности нужно указать в формате дд.мм.ггг (например, 05.04.2024).");
+                "использовать точку. Срок годности нужно указать в формате дд.мм.ггг (например, 05.04.2024).\nПример ввода: Молоко, 1, 15.12.2023");
     }
 
     private void showProductsCommandReceived(long chatId) {

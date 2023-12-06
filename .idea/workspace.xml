@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61840525-b9c1-4626-82e1-29af27cb86eb" name="Changes" comment="feat: add telegam bot commands">
+    <list default="true" id="61840525-b9c1-4626-82e1-29af27cb86eb" name="Changes" comment="fix: bug">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/RecipeBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/RecipeBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/FridgeProductManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/FridgeProductManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/IngredientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/IngredientManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/VirtualFridgeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/classes/managers/VirtualFridgeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/dao/FridgeProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/dao/FridgeProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/dao/IngredientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/dao/IngredientDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/dao/RecipeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/dao/RecipeDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/service/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/barkhatnat/service/TelegramBot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,24 +31,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Mvideo/Downloads/h2-2.2.224.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mvideo/Documents/GitHub/MyVirtualFridgeBot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Mvideo\Documents\GitHub\MyVirtualFridgeBot" />
@@ -93,7 +85,12 @@
       <updated>1701471733406</updated>
       <workItem from="1701471734465" duration="412000" />
       <workItem from="1701472178501" duration="49000" />
-      <workItem from="1701472352262" duration="19190000" />
+      <workItem from="1701472352262" duration="19920000" />
+      <workItem from="1701517925275" duration="3175000" />
+      <workItem from="1701545223300" duration="1565000" />
+      <workItem from="1701704411424" duration="8000" />
+      <workItem from="1701768058612" duration="473000" />
+      <workItem from="1701857556482" duration="3744000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add files">
       <option name="closed" value="true" />
@@ -119,7 +116,31 @@
       <option name="project" value="LOCAL" />
       <updated>1701491362874</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: little changes">
+      <option name="closed" value="true" />
+      <created>1701492498487</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701492498487</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: little changes">
+      <option name="closed" value="true" />
+      <created>1701492558810</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701492558810</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix: bug">
+      <option name="closed" value="true" />
+      <created>1701518750916</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701518750916</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +160,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add files" />
     <MESSAGE value="feat: add telegam bot commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add telegam bot commands" />
+    <MESSAGE value="feat: little changes" />
+    <MESSAGE value="fix: bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: bug" />
   </component>
 </project>

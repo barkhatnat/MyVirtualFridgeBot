@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws TelegramApiException {
-        final TelegramBot telegramBot = new TelegramBot("6819922923:AAFfIhzwbtWzr2EVZv7MHzJmEy-V_Uds4Qs");
+        final TelegramBot telegramBot = new TelegramBot("6819922923:AAH2kinTWBb1Fd7CeiDNtnKzGC5c_WgDmOM");
         TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
         try {
             DatabaseConnectionManager.openConnection();
