@@ -1,4 +1,4 @@
-![image](https://github.com/barkhatnat/MyVirtualFridgeBot/assets/113011969/53a2cad8-1f45-464e-b166-cd7fc922858b)# My Virtual Fridge Bot
+# My Virtual Fridge Bot
 
 Это учебный проект (по сути MVP), реализованный за 2 дня в рамках курса по Java-разработке от компании КРОК :)
 
